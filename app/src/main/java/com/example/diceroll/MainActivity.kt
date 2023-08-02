@@ -20,13 +20,21 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         val dice = Dice(6)
         val diceRoll = dice.roll()
+        val diceRoll2 = dice.roll2()
         val resultTv: TextView = findViewById(R.id.NumberTv)
         resultTv.text = diceRoll.toString()
+
+        val resultTv2: TextView = findViewById(R.id.NumberTv2)
+        resultTv2.text = diceRoll2.toString()
+
     }
 }
 
 class Dice(private val numSides: Int) {
     fun roll(): Int {
+        return (1..numSides).random()
+    }
+    fun roll2(): Int {
         return (1..numSides).random()
     }
 }
